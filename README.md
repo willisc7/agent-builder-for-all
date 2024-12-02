@@ -12,6 +12,12 @@
     --allow-unauthenticated \
     --set-env-vars GOOGLE_PLACES_API_KEY=<your_api_key>
     ```
+4. Test the service
+    ```
+    curl -X POST \
+      -H "Content-Type: application/json" \
+      -d '{"preferences": "Tesla Service Center","city": "San Diego"}' https://<CLOUD_RUN_URI>/tourist_attractions
+    ```
 ### Tutorial
 Follow the steps [here](agent-builder-for-all.ipynb) for the main tutorial.
 
