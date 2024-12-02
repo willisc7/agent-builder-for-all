@@ -1,0 +1,43 @@
+openapi: 3.0.2
+info:
+  title: Search API
+  description: >-
+    This API takes a search query and returns results
+  version: 2.0
+servers:
+  - url: <YOUR_CLOUD_RUN_ENDPOINT>
+paths:
+  /places_search_tool:
+    post:
+      summary: Retrieves points of interest for a location
+      operationId: places_search_tool
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchInput'
+      responses:
+        '200':
+          description: Successfully got results (may be empty)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            name:
+                                type: string
+components:
+  schemas:
+    SearchInput:
+      type: object
+      properties:
+        preferences:
+            type: string
+        city:
+            type: string
