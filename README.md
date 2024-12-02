@@ -1,5 +1,11 @@
-## Pre-requisites
-### Deploy Places Service API
+## Tutorial
+This tutorial will show you how Vertex AI supports no code, low code, and medium-high code Gen AI Agent use cases. It will be broken into three parts:
+* Part 1: A no code way to create a data store tool that can be used to perform Retrieval Augmented Generation
+* Part 2: A low code way to create a conversational agent using Agent Builder
+* Part 3: A code-first way to create a workflow agent
+
+### Pre-requisites
+#### Deploy Places Service API
 1. In the Google Cloud console, type in "Places API", enable the API, and store your API key somewhere safe to use later
 2. Give your compute service account the following roles:
     * Artifact Registry Repository Administrator
@@ -20,14 +26,8 @@
       -d '{"preferences": "Tesla Service Center","city": "San Diego"}' https://<CLOUD_RUN_URI>/tourist_attractions
     ```
 
-## Tutorial
-This tutorial will show you how Vertex AI supports no code, low code, and medium-high code Gen AI Agent use cases. It will be broken into three parts:
-* Part 1: A no code way to create a data store tool that can be used to perform Retrieval Augmented Generation
-* Part 2: A low code way to create a conversational agent using Agent Builder
-* Part 3: A code-first way to create a workflow agent
-
 ### Part 1: No Code Data Store Tool
-**Pros** 
+**Pros**
 * Managed runtime
 * UI based
 * No code involved in making the tool
@@ -53,11 +53,11 @@ This tutorial will show you how Vertex AI supports no code, low code, and medium
 15. Check out the other customizations you can use when calling the API [here](https://cloud.google.com/generative-ai-app-builder/docs/preview-search-results?authuser=3). For example, you can use `RESULT_MODE` to return chunks of text instead of documents. This could be useful to an agent that is trying to reason about how to handle the returned results. 
 
 ### Part 2: Low Code Conversational Agent
-**Pros:** 
+**Pros** 
 * Managed runtime
 * UI based
 
-**Cons:**
+**Cons**
 * Less control due to managed runtime (still fits most conversational use cases and some non-conversational use cases)
 * You need to make the tool (although this might be inevitable depending on your use case)
 
@@ -100,10 +100,10 @@ This tutorial will show you how Vertex AI supports no code, low code, and medium
 22. Follow up with "What about Austin, TX?" and itll use the context of the conversation to supply a similar answer
 
 ### Part 3: Medium-High Code Agent
-**Pros:** 
+**Pros** 
 * Full control as a developer
 
-**Cons:**
+**Cons**
 * Steep learning curve
 * No managed runtime (you need to figure out how to deploy and host)
 
